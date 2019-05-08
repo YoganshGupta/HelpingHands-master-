@@ -1,0 +1,41 @@
+<app-loggedinheaderngo></app-loggedinheaderngo>
+<br><br><br><br>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+</head>
+<body>
+
+<table align="center">
+  <tr>
+    <th>First Name</th>
+    <th>Email</th>
+    <th>Address</th>
+    <th>Contact Number</th>
+    <th>Stationery Type</th>
+    <th>Units Available</th>
+  </tr>
+  <tr *ngFor = "let item of stationaryData">
+    <td>{{ item.donorFirstName + item.donorLastName}}</td>
+    <td>{{ item.donorEmail }}</td>
+    <td>{{ item.donorAddress }}</td>
+    <td>{{ item.donorContact }} </td>
+    <td>{{ item.stationaryType }}</td>
+    <td>{{ item.units }}</td>
+    
+    
+  </tr>
+
+  
+  
+</table>
+
+</body>
+</html>
+
+<app-footer></app-footer>

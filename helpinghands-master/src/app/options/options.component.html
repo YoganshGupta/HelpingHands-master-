@@ -1,0 +1,100 @@
+<app-loggedinheader></app-loggedinheader>
+<div class="horz">
+<div class="logComPad"></div>
+<flash-messages></flash-messages>
+<h1 align="center">Donate</h1>
+<h2 align= "right">Login as {{ donatorDetail.firstName }} </h2>
+<br>
+<div class="row">
+ <div class="col-lg-3">
+  
+  </div>
+  <div class="col-lg-3">
+      <a routerLinkActive="active" routerLinkActiveOptions="{exact.true}" (click)= "onMedicineClick()" class="button">
+      <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+            
+                <a href="#"><img src="./assets/medicines.jpg" alt="Medicines" style="width:100%" class="border"></a>
+        </div>
+        <div class="flip-card-back">
+            <br><br><br> 
+            <h1>Medicines</h1> 
+        </div>
+      </div>
+    </div>
+  </a>
+  </div>
+
+  
+
+  <div class="col-lg-3">
+      <div class="col-lg-3">
+          <a routerLinkActive="active" routerLinkActiveOptions="{exact.true}" (click)= "onClothesClick()" class="button">
+          <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <a href="#"><img src="./assets/clothes.jpg" alt="Clothes" style="width:100%" class="border"></a>            
+            </div>
+            <div class="flip-card-back">
+                <br><br><br> 
+                <h1>Clothes</h1> 
+            </div>
+          </div>
+        </div>
+        </a>
+      </div>  
+    </div>
+
+  <div class="col-lg-3">
+ 
+  </div>
+</div>
+
+<br>
+
+  <div class="row">
+      <div class="col-lg-3">
+       
+       </div>
+       <div class="col-lg-3">
+          <a routerLinkActive="active" routerLinkActiveOptions="{exact.true}" (click)= "onStationaryClick()" class="button">
+           <div class="flip-card">
+           <div class="flip-card-inner">
+             <div class="flip-card-front">
+                <a href="#"><img src="./assets/stationery.jpg" alt="Stationery" style="width:100%" class="border"></a></div>
+             <div class="flip-card-back">
+              <br><br><br> 
+              <h1>Stationery</h1> 
+             </div>
+           </div>
+         </div>
+         </a>
+       </div>
+     
+       
+     
+       <div class="col-lg-3">
+           <div class="col-lg-3">
+              <a routerLinkActive="active" routerLinkActiveOptions="{exact.true}" (click)= "onMiscellaneousClick()" class="button">
+               <div class="flip-card">
+               <div class="flip-card-inner">
+                 <div class="flip-card-front">
+                
+          <a href="#"><img src="./assets/misc.JPG" alt="Miscellaneous" style="width:100%" class="border"></a>
+       
+                </div>
+                 <div class="flip-card-back">
+                    <br><br><br> 
+                    <h1>Miscellaneous</h1> 
+               </div>
+             </div>
+             </div>
+            </a>
+           </div>  
+         </div>
+     
+       <div class="col-lg-3">
+      
+       </div>
+     </div>

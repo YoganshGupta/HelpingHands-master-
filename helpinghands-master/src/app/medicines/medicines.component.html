@@ -1,0 +1,76 @@
+<app-loggedinheaderdonator></app-loggedinheaderdonator>
+<br>
+<br>
+<br>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h4 align="right">login as {{ donorName }}</h4>
+  <h2>Medicine Detail</h2>
+  
+  <form class="form-horizontal" action="" method="post" #signupForm="ngForm" (ngSubmit)="onMedicineFormSubmit()">
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="mname">Medicine Name:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="mname" placeholder="Enter Medicine Name" name="mname" [(ngModel)]="medicineModel.medicineName">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="mby">Manufactured By:</label>
+      <div class="col-sm-10">          
+        <input type="text" class="form-control" id="mby" placeholder="Enter Manufacturer Name" name="mby" [(ngModel)]="medicineModel.medicineManufacturedBy">
+      </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="mdate">Manufacturing Date</label>
+        <div class="col-sm-10">          
+          <input type="text" class="form-control" id="mdate" placeholder="Enter Manufacturer Date" name="mdate" [(ngModel)]="medicineModel.medicineManufacturingDate">
+        </div>
+      </div>
+
+      <div class="form-group">
+          <label class="control-label col-sm-2" for="edate">Expiry Date:</label>
+          <div class="col-sm-10">          
+            <input type="text" class="form-control" id="edate" placeholder="Enter Manufacturer Name" name="edate" [(ngModel)]="medicineModel.medicineExpiryDate">
+          </div>
+        </div>
+     
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="pf">Primary Function:</label>
+            <div class="col-sm-10">          
+              <input type="text" class="form-control" id="pf" placeholder="Enter Primary Function" name="pf" [(ngModel)]="medicineModel.medicinePrimaryFunction">
+            </div>
+          </div>
+          
+          <div class="form-group">
+              <label class="control-label col-sm-2" for="qa">Quantity Available:</label>
+              <div class="col-sm-10">          
+                <input type="text" class="form-control" id="qa" placeholder="Enter Quantity Available" name="qa" [(ngModel)]="medicineModel.medicineQuantity">
+              </div>
+            </div>
+            
+
+
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <a router link='/login'><button type="submit" class="btn btn-primary">Submit</button></a>
+      </div>
+    </div>
+  </form>
+</div>
+
+</body>
+</html>
+<app-footer></app-footer>
+

@@ -1,0 +1,47 @@
+<app-loggedinheaderngo></app-loggedinheaderngo>
+<br><br><br><br>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+</head>
+<body>
+
+<table align="center">
+  <tr>
+    <th>Donator's Name</th>
+    <th>Donator's Email</th>
+    <th>Donator's Address</th>
+    <th>Donator's Contact Number</th>
+    <th>Medicine Name</th>
+    <th>Manufactured By</th>
+    <th>Manufacturing Date</th>
+    <th>Expiry Date</th>
+    <th>Primary Function</th>
+    <th>Quantity Available</th>
+  </tr>
+  <tr *ngFor = "let item of medicinesData">
+    <td>{{ item.donorFirstName + item.donorLastName}}</td>
+    <td>{{ item.donorEmail }}</td>
+    <td>{{ item.donorAddress }}</td>
+    <td>{{ item.donorContact }} </td>
+    <td>{{ item.medicineName }}</td>
+    <td>{{ item.medicineManufacturedBy }}</td>
+    <td>{{ item.medicineManufacturingDate }}</td>
+    <td>{{ item.medicineExpiryDate }}</td>
+    <td>{{ item.medicinePrimaryFunction }}</td>
+    <td>{{ item.medicineQuantity }}</td>
+  </tr>
+
+
+  
+</table>
+
+</body>
+</html>
+
+<app-footer></app-footer>

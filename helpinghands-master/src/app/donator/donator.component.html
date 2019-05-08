@@ -1,0 +1,140 @@
+<div class="pos">
+    <div class="image">
+        <div class="navbar navbar-inverse">
+          <div class="container">
+            <div class="navbar-header">
+              <button class="navbar-toggle" data-target="#mymenu" data-toggle="collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a routerLink='/login' class="navbar-brand">HelpingHands</a>
+            </div>
+            <div class="collapse navbar-collapse" id="mymenu">
+              <div class="topnav-right">
+              <ul class= "nav navbar-nav"> 
+                <li routerLinkActive="active" routerLinkActiveOptions="{exact.true}"><a routerLink='/logingen'>Login</a></li>
+                <li routerLinkActive="active" routerLinkActiveOptions="{exact.true}"><a routerLink='/signupgen'>SignUp</a></li>
+              </ul>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div class="login-form">
+          <form #saveForm="ngForm" action="" method="post" #donatorForm="ngForm" (ngSubmit)="onDonatorSignupSubmit()">
+            <h2 class="text-center">Sign Up as Donator</h2>
+            <div class="form-group">
+              <input type="text" class="form-control" name="fname" placeholder="First Name" required="required"
+              [(ngModel)] = "donatorModel.firstName"
+              #fname="ngModel"
+              required
+              minlength="4"
+              maxlength="12"
+              pattern="^[A-Za-z]{4,12}$">
+              <div *ngIf="!fname.valid && fname.touched">
+                <span class ="text-danger" *ngIf="fname.errors.required">First Name is required</span>
+                <span class ="text-danger" *ngIf="fname.errors.minlength">Min {{fname.errors.minlength.requiredLength}} character are required</span>
+                <span class ="text-danger" *ngIf="fname.errors.maxlength">Max {{y}} character are required</span>
+                <span class ="text-danger" *ngIf="fname.errors.pattern">Special Characters and digits are not allowed</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name="lname" placeholder="Last Name" required="required"
+              [(ngModel)] = "donatorModel.lastName"
+              #lname="ngModel"
+              required
+              minlength="4"
+              maxlength="12"
+              pattern="^[A-Za-z]{4,12}$">
+              <div *ngIf="!lname.valid && lname.touched">
+                <span class ="text-danger" *ngIf="lname.errors.required">Last Name is required</span>  
+                <span class ="text-danger" *ngIf="lname.errors.minlength">Min {{lname.errors.minlength.requiredLength}} character are required</span>
+                <span class ="text-danger" *ngIf="lname.errors.maxlength">Max {{y}} character are required</span>
+                <span class ="text-danger" *ngIf="lname.errors.pattern">Special Characters and digits are not allowed</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" name="email" placeholder="Email Id" required="required"
+              [(ngModel)] = "donatorModel.email"
+              #email="ngModel"
+              required
+              email >
+              <div *ngIf="!email.valid && email.touched">
+                <span class="text-danger" *ngIf="email.errors.required">Email is Required</span>
+                <span class="text-danger" *ngIf="email.errors.email">Email is Not Valid</span>
+              </div>
+            </div>
+    
+            <div class="form-group">
+                <input type="text" class="form-control" name="address" placeholder="Address" required="required"
+                [(ngModel)] = "donatorModel.address"
+                #address="ngModel"
+                required>
+                 <div *ngIf="!address.valid && address.touched">
+                  <span class ="text-danger" *ngIf="address.errors.required">Address is required</span>  
+                </div>
+              </div>
+              
+    
+    
+            <div class="form-group">
+              <input type="text" class="form-control" name="contact_no" placeholder="Contact Number" required="required"
+              [(ngModel)] = "donatorModel.contact"
+              #contact_no="ngModel"
+              required
+              minlength="10"
+              pattern="^[7-9]{1}[0-9]{9}$">
+              <div *ngIf="!contact_no.valid && contact_no.touched">
+                <span class ="text-danger" *ngIf="contact_no.errors.required">Contact Number is required</span>
+                <span class ="text-danger" *ngIf="contact_no.errors.minlength">{{contact_no.errors.minlength.requiredLength}} digits are required</span>
+                <span class ="text-danger" *ngIf="contact_no.errors.pattern">Special Characters and characters are not allowed</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name="uname" placeholder="User Name" required="required"
+              [(ngModel)] = "donatorModel.uname"
+              #uname="ngModel"
+              required
+              minlength="4"
+              maxlength="12"
+              pattern="^[A-Za-z]{4,12}$">
+              <div *ngIf="!uname.valid && uname.touched">
+                <span class ="text-danger" *ngIf="uname.errors.required">User Name is required</span>
+                <span class ="text-danger" *ngIf="uname.errors.minlength">Min {{uname.errors.minlength.requiredLength}} character are required</span>
+                <span class ="text-danger" *ngIf="uname.errors.maxlength">Max {{y}} character are required</span>
+                <span class ="text-danger" *ngIf="uname.errors.pattern">Special Characters and digits are not allowed</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" name="password" placeholder="Password"  required="required"
+              [(ngModel)] = "donatorModel.password"
+              #password="ngModel"
+              required
+              minlength="8"
+              pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$&%^*]).{8,}$">
+              <div *ngIf="!password.valid && password.touched">
+                <span class ="text-danger" *ngIf="password.errors.required">Password is required</span>  
+                <span class ="text-danger" *ngIf="password.errors.minlength">Min {{password.errors.minlength.requiredLength}} character are required</span>
+                <span class ="text-danger" *ngIf="password.errors.pattern">Atleast 1 digit,1 UpperCase,1 LowerCase and 1 Special Character should be present </span>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" name="rpassword" placeholder="Retype Password" required="required"
+              ngModel  
+              required
+              appConfirmEqualValidator="password"
+              validateEqual="password"
+              #rpassword="ngModel">
+              <div *ngIf="!rpassword.valid && rpassword.touched">
+                <span class ="text-danger" *ngIf="rpassword.errors?.notEqual">Password is not Matched</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary btn-block" name="signup">Sign Up</button>
+            </div>
+          </form>
+        </div>
+        <br><br><br><br><br>
+      </div>
+    </div>
+      
